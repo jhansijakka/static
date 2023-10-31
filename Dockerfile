@@ -1,6 +1,4 @@
-FROM ubuntu:trusty
+FROM niginx
 LABEL maintainer address "jhansi"
-RUN apt update && apt install apache2 -y
-COPY ./ /var/www/html
-CMD ["apachectl", "-D","FOREGROUND"]
+COPY ./index.html /usr/share/nginx/html
 EXPOSE 80
